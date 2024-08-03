@@ -9,7 +9,8 @@ curl -X POST http://localhost:8000/file/ -F "file.mp4"
 curl -X PATCH http://localhost:8000/file/{id}/change_resolution/
  -H "Content-Type: application/json" -d "{\"width\": 120, \"height\": 120}"
 ```
-Изменяет разрешение файла на width и height указанные в запросе. Возвращает индикатор того что обработка началась. Не того что она именно закончилась success: Boolean
+Изменяет разрешение файла на width и height указанные в запросе. Возвращает индикатор того что обработка началась. Не того что она именно закончилась 
+(success: Boolean)
 
 ```
 curl -X GET http://localhost:8000/file/{id}/
