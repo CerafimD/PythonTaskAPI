@@ -42,13 +42,10 @@ class VideoViewSet(viewsets.ModelViewSet):
     def destroy(self, request, *args, **kwargs):
         video = self.get_object()
         file_path = video.file.path
-        print(f"Attempting to delete file: {file_path}")  # Debugging output
         video.delete()
         if os.path.exists(file_path):
             os.remove(file_path)  # Удаление файла с диска
-            print(f"File deleted: {file_path}")  # Debugging output
-        else:
-            print(f"File not found: {file_path}")  # Debugging output
+
         return Response({'success': True}, status=status.HTTP_200_OK)
 
 
